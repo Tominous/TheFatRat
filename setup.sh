@@ -1328,24 +1328,24 @@ echo -e "$green" [ ✔ ]::[Internet Connection]: CONNECTED!;
     cont
 fi
 
-#ping -c 1 google.com > /dev/null 2>&1
-#png="$?" 
-# if [ $png == "0" ]
-#then
-#ping google hostname was succefully , then proceed with setup 
-#    echo -e $green [ ✔ ]::[Internet Connection]: CONNECTED!;
-#    sleep 1
-#    cont
-#elif [ $png == "1" ]
-#then
-#ping hostname failed , load chknet function
-#    echo -e $yellow [ X ]::[Internet Connection]: LOCAL ONLY!;
-#    chknet
-#    sleep 1
-#elif [ $png == "2" ]
-#then
-#ping hostname failed , load chknet function
-#echo -e $red [ X ]::[Internet Connection]: OFFLINE!;
-#chknet
-#    sleep 1
-#fi
+ping -c 1 google.com > /dev/null 2>&1
+png="$?" 
+ if [ $png == "0" ]
+then
+ping google hostname was succefully , then proceed with setup 
+    echo -e $green [ ✔ ]::[Internet Connection]: CONNECTED!;
+    sleep 1
+    cont
+elif [ $png == "1" ]
+then
+ping hostname failed , load chknet function
+    echo -e $yellow [ X ]::[Internet Connection]: LOCAL ONLY!;
+    chknet
+    sleep 1
+elif [ $png == "2" ]
+then
+ping hostname failed , load chknet function
+echo -e $red [ X ]::[Internet Connection]: OFFLINE!;
+chknet
+    sleep 1
+fi
